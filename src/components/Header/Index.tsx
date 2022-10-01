@@ -4,10 +4,10 @@ import effect2 from '/assets/effect-2.svg';
 
 export function Header() {
   return(
-    <header className="bg-[#0B1B2B] h-72  left-0 right-0 top-0">
-      <img className='absolute top-[70px] left-0' src={effect1} alt="" />
+    <header className="bg-base-profile h-[18.5rem]  left-0 right-0 top-0">
+      <img className='absolute top-[4.375rem] left-0' src={effect1} alt="" />
       <img className='mx-auto pt-16' src={Logo} alt="Logo do GitHub Blog" />
-      <img className='absolute top-8 right-0' src={effect2} alt="" />
+      <img  src={effect2} className='absolute top-8 right-0' alt="" />
     </header>
   )
 }
