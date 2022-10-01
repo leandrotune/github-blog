@@ -1,12 +1,14 @@
 import { Routes, Route } from 'react-router-dom'
-import { Profile } from '../components/Profile'
 import { DefaultLayout } from '../layout/DefaultLayout/index'
+import { Home } from '../pages/Home'
+import { Post } from '../pages/Post'
 
 export function Router() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<Profile />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/post" element={<Post />} />
       </Route>
     </Routes>
   )
