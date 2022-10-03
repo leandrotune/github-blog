@@ -10,7 +10,7 @@ import avatar from '../../../public/assets/avatar.svg'
 
 export function Profile() {
   return (
-    <div className=" max-w-[54rem] mt-[-5.438rem] h-[212px] bg-base-profile flex items-center justify-evenly mx-auto rounded-[10px]">
+    <div className="max-w-[54rem] mt-[-5.438rem] h-[212px] bg-base-profile flex items-center justify-evenly mx-auto rounded-[10px]">
       <div>
         <img className="w-[148px] h-[148px]" src={avatar} alt="" />
       </div>
