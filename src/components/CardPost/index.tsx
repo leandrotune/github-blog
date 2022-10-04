@@ -1,8 +1,8 @@
 export function CardPost() {
   return (
-    <div className="max-w-[416px] bg-base-post rounded-[10px] p-8 ">
+    <div className="max-w-[416px] bg-base-post border-none rounded-[10px] p-8 ">
       <div className="flex justify-between">
-        <h1 className="w-[283px] text-base-title font-bold text-xl ">
+        <h1 className="w-[283px] text-base-title font-bold text-xl  ">
           JavaScript data types and data structures
         </h1>
         <span className="text-base-span text-sm">Há 1 dia</span>
