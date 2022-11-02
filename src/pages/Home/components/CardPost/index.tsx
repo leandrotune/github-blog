@@ -1,24 +1,36 @@
 import { Text } from '../../../../components/Text'
 import { Heading } from '../../../../components/Heading'
+import { PostProps } from '../..'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
+import { NavLink } from 'react-router-dom'
 
-export function CardPost() {
+export function CardPost({ number, title, created_at, body }: PostProps) {
+  const publishedDateRelativeToNow = formatDistanceToNow(new Date(created_at), {
+    locale: ptBR,
+    addSuffix: true,
+  })
+
   return (
-    <div className="max-w-[416px] bg-gray-700 rounded-[10px] p-8 border-1  hover:border-blue-500">
-      <div className="flex justify-between">
-        <Heading asChild size="xl" className="w-[283px]">
-          <h2>JavaScript data types and data structures</h2>
-        </Heading>
+    <div>
+      <NavLink to={`/post/${number}`}>
+        <div
+          key={number}
+          className="max-w-[416px] bg-gray-700 rounded-[10px] p-8 border-2 border-transparent hover:border-gray-500"
+        >
+          <div className="flex justify-between">
+            <Heading asChild size="xl" className="w-[283px]">
+              <h2>{title}</h2>
+            </Heading>
 
-        <Text size="sm">Há 1 dia</Text>
-      </div>
+            <Text size="sm">{publishedDateRelativeToNow}</Text>
+          </div>
 
-      <Text asChild className="mt-6">
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in{' '}
-        </p>
-      </Text>
+          <Text asChild className="mt-6">
+            <p>{body}</p>
+          </Text>
+        </div>
+      </NavLink>
     </div>
   )
 }

@@ -5,9 +5,9 @@ import { App } from './App'
 import { queryClint } from './services/query.Clint'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <QueryClientProvider client={queryClint}>
-      <App />
-    </QueryClientProvider>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <QueryClientProvider client={queryClint}>
+    <App />
+  </QueryClientProvider>,
+  // </React.StrictMode>,
 )

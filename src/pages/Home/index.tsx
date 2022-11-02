@@ -1,21 +1,18 @@
-// import axios from 'axios'
-// import { useQuery } from 'react-query'
 import { CardPost } from './components/CardPost'
-import { Profile } from './components/Profile'
 import { Search } from './components/Search'
+import { Profile } from './components/Profile/index'
+import { useAllPosts } from '../../services/hooks/useAllPosts'
+import { Loading } from './components/Loading'
 
-export interface Repository {
-  full_name: string
-  description: string
+export interface PostProps {
+  title: string
+  body: string
+  created_at: Date | number
+  number: number
 }
 
 export function Home() {
-  // const { data } = useQuery<Repository[]>('repos', async () => {
-  //   const response = await axios.get('https://api.github.com/users/leandrotune')
-  //   return response.data
-  // })
-
-  // console.log(data)
+  const query = useAllPosts()
 
   return (
     <div className="h-screen ">
@@ -23,12 +20,21 @@ export function Home() {
       <main className="max-w-[54rem] mt-[4.5rem] mx-auto">
         <Search />
         <ul className="pb-[234px] mt-12 grid grid-cols-2 gap-8">
-          <CardPost />
-          <CardPost />
-          <CardPost />
-          <CardPost />
-          <CardPost />
-          <CardPost />
+          {query.isLoading ? (
+            <Loading />
+          ) : query.isError ? (
+            'Error'
+          ) : query.data ? (
+            query.data.items.map((item) => (
+              <CardPost
+                key={item.number}
+                title={item.title}
+                number={item.number}
+                created_at={new Date(item.created_at)}
+                body={item.body}
+              />
+            ))
+          ) : null}
         </ul>
       </main>
     </div>

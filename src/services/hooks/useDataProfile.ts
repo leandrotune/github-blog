@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { api } from '../../api/api'
+import { api, username } from '../../api/api'
 
 export interface DataProfile {
   id: string
@@ -11,10 +11,10 @@ export interface DataProfile {
 }
 
 export function useDataProfile() {
-  return useQuery<DataProfile>(
+  return useQuery(
     'profile',
     async () => {
-      const { data } = await api.get('users/leandrotune')
+      const { data } = await api.get<DataProfile>(`users/${username}`)
 
       return data
     },

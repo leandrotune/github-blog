@@ -13,15 +13,15 @@ import { Text } from '../../../../components/Text'
 
 export function PostInfo() {
   return (
-    <header className="bg-gray-800 p-8 mt-[-5.438rem] rounded-[10px]">
+    <header className="bg-gray-800 p-8 mt-[-5.438rem] rounded-[10px] important">
       <nav className="flex justify-between">
-        <NavLink
-          to="/"
-          className="text-blue-500 flex items-center gap-2 text-sm font-bold hover:cursor-pointer"
-        >
-          <FontAwesomeIcon icon={faChevronLeft} />
-          voltar
+        <NavLink to="/home">
+          <button className="hover:cursor-pointer text-blue-500 flex items-center gap-2 text-sm font-bold ">
+            <FontAwesomeIcon icon={faChevronLeft} />
+            voltar
+          </button>
         </NavLink>
+
         <a
           href="#"
           className="text-blue-500 flex items-center gap-2 text-sm font-bold hover:cursor-pointer hover:underline"
