@@ -1,17 +1,35 @@
 import { PostContent } from './components/PostContent'
 import { PostInfo } from './components/PostInfo'
-import { useQuery } from 'react-query'
-import { api, repoName, username } from '../../api/api'
+
 import { useParams } from 'react-router-dom'
+// import { useQuery } from 'react-query'
+// import { api } from '../../api/api'
+import { postData, usePostData } from '../../services/hooks/useLoadPostData'
 
 export function Post() {
-  const number = useParams()
+  const { id } = useParams()
 
-  console.log(number)
+  postData(id)
 
-  const { data } = useQuery('post', async () => {
-    const response = await api.get(`/repos/${username}/${repoName}/${number}`)
-  })
+  const query = usePostData()
+
+  console.log(query)
+
+  // const { data } = useQuery(
+  //   'repos',
+  //   async () => {
+  //     const response = await api.get(
+  //       `repos/leandrotune/github-blog/issues/${id}`,
+  //     )
+
+  //     return response.data
+  //   },
+  //   {
+  //     staleTime: 1000 * 60, // 10 minute
+  //   },
+  // )
+
+  // console.log(data)
 
   return (
     <div className="max-w-[54rem] mx-auto">

@@ -1,5 +1,5 @@
-import effect1 from '../../../public/assets/effect-1.svg'
-import effect2 from '../../../public/assets/effect-2.svg'
+import effect1 from '../../assets/effect-1.svg'
+import effect2 from '../../assets/effect-2.svg'
 import { Logo } from '../../pages/Home/components/Logo'
 
 export function Header() {

@@ -11,6 +11,16 @@ import { NavLink } from 'react-router-dom'
 import { Heading } from '../../../../components/Heading'
 import { Text } from '../../../../components/Text'
 
+// export interface Infor {
+//   title: string
+//   login: string
+//   comments: string
+// }
+
+// interface PostInfoProps {
+//   infor: Infor
+// }
+
 export function PostInfo() {
   return (
     <header className="bg-gray-800 p-8 mt-[-5.438rem] rounded-[10px] important">
@@ -31,24 +41,22 @@ export function PostInfo() {
         </a>
       </nav>
 
-      <Heading className="pt-5">
-        JavaScript data types and data structures
-      </Heading>
+      <Heading className="pt-5">title</Heading>
 
       <ul className="pt-2 flex  gap-8">
         <li className="flex items-center gap-2 ">
           <FontAwesomeIcon icon={faGithub} className="text-gray-500" />
-          <Text className="text-gray-400">cameronwll</Text>
+          <Text className="text-gray-400">login</Text>
         </li>
 
         <li className="flex items-center gap-2 ">
           <FontAwesomeIcon icon={faCalendar} className="text-gray-500" />
-          <Text className="text-gray-400">Há 1 dia</Text>
+          <Text className="text-gray-400">há 1 dia</Text>
         </li>
 
         <li className="flex items-center gap-2">
           <FontAwesomeIcon icon={faComment} className="text-gray-500" />
-          <Text className="text-gray-400">5 comentários</Text>
+          <Text className="text-gray-400">comments</Text>
         </li>
       </ul>
     </header>

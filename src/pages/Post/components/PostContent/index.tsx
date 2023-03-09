@@ -1,4 +1,4 @@
-import code from '../../../../../public/assets/code.svg'
+import code from '../../../../assets/code.svg'
 
 import { Text } from '../../../../components/Text'
 

@@ -21,7 +21,7 @@ export function useAllPosts() {
         'https://api.github.com/search/issues',
         {
           params: {
-            q: `repos:${username}/${repoName}/issues/${1}`,
+            q: `repos:${username}/${repoName}/post/${1}`,
           },
         },
       )
